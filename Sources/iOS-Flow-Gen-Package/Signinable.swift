@@ -8,7 +8,7 @@ import Combine
 
 #if os(iOS)
 
-protocol Signinable: class {
+public protocol Signinable: class {
     var username: Published<String>
     var password: Published<String>
 }
