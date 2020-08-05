@@ -4,13 +4,16 @@
 //
 //  Created by Connor Besancenez on 8/5/20.
 //
+#if os(iOS)
 import Combine
 
-#if os(iOS)
-
 public protocol Signinable: class {
-    var username: Published<String> { get set }
-    var password: Published<String> { get set }
+    var username: String? { get }
+    var usernamePublished: Published<String?> { get }
+    var usernamePublisher: Published<String?>.Publisher { get }
+    
+    var password: String? { get }
+    var passwordPublished: Published<String?> { get }
+    var passwordPublisher: Published<String?>.Publisher { get }
 }
-
 #endif
