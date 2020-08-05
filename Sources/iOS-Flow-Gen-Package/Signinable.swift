@@ -9,8 +9,8 @@ import Combine
 #if os(iOS)
 
 public protocol Signinable: class {
-    var username: Published<String>
-    var password: Published<String>
+    var username: Published<String> { get set }
+    var password: Published<String> { get set }
 }
 
 #endif
