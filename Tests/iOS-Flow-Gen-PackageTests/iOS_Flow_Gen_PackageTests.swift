@@ -1,12 +1,12 @@
 import XCTest
-@testable import flow_gen
+@testable import iOS_Flow_Gen_Package
 
-final class flow_genTests: XCTestCase {
+final class iOS_Flow_Gen_PackageTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(flow_gen().text, "Hello, World!")
+        XCTAssertEqual(iOS_Flow_Gen_Package().text, "Hello, World!")
     }
 
     static var allTests = [
