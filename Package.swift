@@ -11,7 +11,6 @@ let package = Package(
         .library(
             name: "FlowGenCore",
             targets: ["FlowGenCore"]),
-        .executable(name: "FlowGen", targets: ["FlowGen"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
