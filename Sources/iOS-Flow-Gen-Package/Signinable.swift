@@ -20,9 +20,9 @@ public protocol Signinable: class {
     var passwordPublisher: Published<String?>.Publisher { get }
         
     // Validaton publishers
-    var usernameIsValidPublisher: Published<Bool>.Publisher { get }
-    var passwordIsValidPublisher: Published<Bool>.Publisher { get }
-    var signInValidPublisher: Published<Bool>.Publisher { get }
+    var usernameIsValidPublisher: AnyPublisher<Bool, Never> { get }
+    var passwordIsValidPublisher: AnyPublisher<Bool, Never> { get }
+    var signInValidPublisher: AnyPublisher<Bool, Never> { get }
     
     // State
     var signInIsActive: Bool { get }
