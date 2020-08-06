@@ -8,7 +8,7 @@
 import Combine
 
 public protocol Signinable: class {
-    var cancellables: Set<AnyCancellable>
+    var cancellables: Set<AnyCancellable> { get }
 
     // Required fields
     var username: String? { get }
@@ -20,9 +20,9 @@ public protocol Signinable: class {
     var passwordPublisher: Published<String?>.Publisher { get }
         
     // Validaton publishers
-    var usernameIsValidPublisher: Published<Bool>.Publisher
-    var passwordIsValidPublisher: Published<Bool>.Publisher
-    var signInValidPublisher: Published<Bool>.Publisher
+    var usernameIsValidPublisher: Published<Bool>.Publisher { get }
+    var passwordIsValidPublisher: Published<Bool>.Publisher { get }
+    var signInValidPublisher: Published<Bool>.Publisher { get }
     
     // State
     var signInIsActive: Bool { get }
@@ -36,11 +36,11 @@ public protocol Signinable: class {
 
 extension Signinable {
     var signInValidPublisher = {
-        Publishers.CombineLatest($usernameIsValidPublisher, passwordIsValidPublisher)
+        Publishers.CombineLatest($usernameIsValidPublisher, $passwordIsValidPublisher)
             .map { usernameIsValid, passwordIsValid in
                 return usernameIsValid && passwordIsValid
             }
             .eraseToAnyPublisher()
-    }
+    }()
 }
 #endif
