@@ -32,5 +32,8 @@ public protocol Signinable: class {
     var isSignedIn: Bool { get }
     var isSignedInPublished: Published<Bool> { get }
     var isSignedInPublisher: Published<Bool>.Publisher { get }
+    
+    // Actions
+    func signIn()
 }
 #endif
