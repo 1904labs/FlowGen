@@ -27,10 +27,10 @@ public protocol Signinable: class {
     // State
     var signInIsActive: Bool { get }
     var signInIsActivePublished: Published<Bool> { get }
-    var signInIsActivePublisher: Published<String?>.Publisher { get }
+    var signInIsActivePublisher: Published<Bool>.Publisher { get }
     
     var isSignedIn: Bool { get }
     var isSignedInPublished: Published<Bool> { get }
-    var isSignedInPublisher: Published<String?>.Publisher { get }
+    var isSignedInPublisher: Published<Bool>.Publisher { get }
 }
 #endif
