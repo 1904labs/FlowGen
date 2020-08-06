@@ -33,14 +33,4 @@ public protocol Signinable: class {
     var isSignedInPublished: Published<Bool> { get }
     var isSignedInPublisher: Published<String?>.Publisher { get }
 }
-
-extension Signinable {
-    var signInValidPublisher = {
-        Publishers.CombineLatest($usernameIsValidPublisher, $passwordIsValidPublisher)
-            .map { usernameIsValid, passwordIsValid in
-                return usernameIsValid && passwordIsValid
-            }
-            .eraseToAnyPublisher()
-    }()
-}
 #endif
