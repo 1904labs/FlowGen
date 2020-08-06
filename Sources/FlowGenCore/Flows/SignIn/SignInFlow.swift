@@ -5,7 +5,7 @@
 //  Created by Connor Besancenez on 8/6/20.
 //
 
-final class SignInFlow: Flow {
+internal final class SignInFlow: Flow {
     init() {}
     
     func makeViewModel() -> String{

@@ -5,7 +5,7 @@
 //  Created by Connor Besancenez on 8/6/20.
 //
 
-protocol Flow: class {
+internal protocol Flow: class {
     func makeViewModel() -> String
     func makeView() -> String
 }

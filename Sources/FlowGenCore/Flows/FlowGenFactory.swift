@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class FlowGenFactory {
+internal final class FlowGenFactory {
     init() {}
     
     /// Returns the view first and then the viewModel

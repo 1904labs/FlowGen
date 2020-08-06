@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FlowType: String {
+internal enum FlowType: String {
     case signIn = "Sign In Flow"
     case signUp = "Sign Up Flow"
     
