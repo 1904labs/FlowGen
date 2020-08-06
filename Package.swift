@@ -9,8 +9,9 @@ let package = Package(
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "FlowGen",
-            targets: ["FlowGen"]),
+            name: "FlowGenCore",
+            targets: ["FlowGenCore"]),
+        .executable(name: "FlowGen", targets: ["FlowGen"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
