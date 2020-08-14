@@ -13,7 +13,7 @@ internal final class SignInFlow: Flow {
         import Foundation
         import Combine
 
-        private class SignInViewModel: Signinable {
+        private class SignInViewModel: ObservableObject, Signinable {
             var cancellables = Set<AnyCancellable>()
 
             // MARK: - Values
