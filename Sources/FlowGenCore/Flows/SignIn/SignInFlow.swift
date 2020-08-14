@@ -85,6 +85,10 @@ internal final class SignInFlow: Flow {
             func signIn() {
                 
             }
+
+            deinit {
+                cancellables.forEach { $0.cancel() }
+            }
         }
         """
         
