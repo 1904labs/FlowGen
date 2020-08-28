@@ -96,7 +96,28 @@ internal final class SignInFlow: Flow {
     }
     
     func makeView() -> String {
-        return ""
+        return """
+        import SwiftUI
+
+        struct SignUpView: View {
+            @ObservedObject var viewModel: SignUpViewModel
+            
+            var body: some View {
+                VStack {
+                    TextField("Username", text: self.$viewModel.username)
+                    TextField("Password", text: self.$viewModel.password)
+                    
+                    Button(action: {
+                        self.viewModel.signIn()
+                    }) { _ in
+                        Text("Sign In")
+                    }
+                    .disabled(!self.$viewModel.signInIsActive)
+                }
+            }
+        }
+        """
     }
 }
+
 

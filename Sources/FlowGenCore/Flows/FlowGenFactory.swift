@@ -13,7 +13,7 @@ internal final class FlowGenFactory {
     /// Returns the view first and then the viewModel
     func makeFlow(type: FlowType) -> (String, String) {
         switch type {
-        case .signIn: return ("", SignInFlow().makeViewModel())
+        case .signIn: return (SignInFlow().makeView(), SignInFlow().makeViewModel())
         case .signUp: return (SignUpFlow().makeView(), SignUpFlow().makeViewModel())
         }
     }
